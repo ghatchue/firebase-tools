@@ -144,6 +144,8 @@ function printIamErrors(results: Array<Required<DeployResult>>): void {
   if (!iamFailures.length) {
     return;
   }
+  
+  iamFailures.forEach((r) => logger.info(JSON.stringify(r.error)));
 
   logger.info("");
   logger.info(

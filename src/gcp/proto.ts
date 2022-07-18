@@ -157,7 +157,8 @@ export function formatServiceAccount(serviceAccount: string, projectId: string):
   }
   if (!serviceAccount.includes("@")) {
     throw new FirebaseError(
-      "Service account must be of the form 'service-account@' or 'service-account@{project-id}.iam.gserviceaccount.com'"
+      "Service account must be of the form 'service-account@' or 'service-account@{project-id}.iam.gserviceaccount.com': " +
+      `account: ${serviceAccount}, projectId: ${projectId}`
     );
   }
 
